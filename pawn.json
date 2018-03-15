@@ -1,0 +1,18 @@
+{
+	"include_paths": null,
+	"user": "Southclaws",
+	"repo": "pawn-array-return-bug",
+	"entry": "test.pwn",
+	"output": "test.amx",
+	"dependencies": [
+		"sampctl/samp-stdlib",
+		"Zeex/samp-plugin-crashdetect"
+	],
+	"runtime": {
+		"mode": "y_testing",
+		"gamemodes": null,
+		"port": null,
+		"maxplayers": null,
+		"extra": null
+	}
+}
