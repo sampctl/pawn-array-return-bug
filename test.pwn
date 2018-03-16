@@ -11,21 +11,20 @@ returnString() {
 }
 
 main() {
-    new padding1[100];
+    // this code works, calling stringOrigin() which simply returns the string
+    // contents directly into a native.
+    // this is one "level" of function call depth.
+    // uncomment these lines for a demo:
+    //
+    // new local[12];
+    // strcat(local, stringOrigin(), sizeof(local));
+    // print(local);
 
+    // this code however, does not work. It calls a Pawn function which returns
+    // the value of the return value of stringOrigin().
+    // this is two "levels" of function depth and causes the error.
+    //
     new local[12];
     strcat(local, returnString(), sizeof(local));
-
     print(local);
-
-    new padding2[100];
-
-    dumparr(padding1);
-    dumparr(padding2);
-}
-
-dumparr(arr[], len = sizeof(arr)) {
-    for(new i; i < len; ++i) {
-        printf("%d: %d", i, arr[i]);
-    }
 }
