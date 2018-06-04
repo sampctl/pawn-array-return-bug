@@ -49,3 +49,20 @@ new local[12];
 strcat(local, returnString(), sizeof(local));
 print(local);
 ```
+
+## Solution
+
+*Always* use pass-by-reference to output array data from a function. The above functions would be rewritten as:
+
+```pawn
+new string[12] = {"Hello world"};
+
+stringOrigin(output[], len = sizeof output) {
+    strcat(output, string, len);
+    return 0; // return 0 generally means success
+}
+
+returnString(output[], len = sizeof output) {
+    return stringOrigin(output, len); // it's okay to directly pass the return of stringOrigin here because stringOrigin only returns a single cell value (0) not an array.
+}
+```
