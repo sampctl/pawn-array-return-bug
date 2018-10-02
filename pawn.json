@@ -1,5 +1,4 @@
 {
-    "include_paths": null,
     "user": "Southclaws",
     "repo": "pawn-array-return-bug",
     "entry": "test.pwn",
